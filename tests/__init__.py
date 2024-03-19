@@ -23,9 +23,9 @@ class MonitoringTest(TestCase):
         Host.create("192.168.26.16", "chengdu_16").save()
 
     def _init_Group(self):
-        Group.create("source", "Source").save()
-        Group.create("solr", "Solr").save()
-        Group.create("other", "Other").save()
+        Group.create("youku", "Youku").save()
+        Group.create("tudou", "Tudou").save()
+        Group.create("aiqiyi", "Aiqiyi").save()
 
     def _init_app_appstatistics(self):
         AppStatistics.create('{"count": 1, "id": 1}', 1).save()

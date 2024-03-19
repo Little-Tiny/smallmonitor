@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from django.views.decorators.csrf import csrf_exempt
 from django.http.response import JsonResponse, HttpResponse
 from api.lib.utils import object_to_json, RepresentsInt, api
-from ipware.ip import get_ip
+from ipware.ip import get_client_ip
 from datetime import datetime
 import json
 from api.lib.constant import MonitoringStatus
@@ -113,7 +113,7 @@ def app_detail(request, pk):
             res = {"code": 405, "message": "Not found this app"}
             return Response(data=res,
                             status=405)
-    ip = get_ip(request, right_most_proxy=True)
+    ip = get_client_ip(request, right_most_proxy=True)
     if ip is not None:
         host = Host.objects.filter(ip=ip).first()
         if host is None:

@@ -11,14 +11,15 @@ class ViewTest(MonitoringTest):
         response = self.client.get(url)
         data = json.loads(response.content.decode("utf-8"))
         self.assertEquals(len(data), 3)
-        self.assertEquals(data[0]["unique_name"], "source")
-        self.assertEquals(data[0]["display_name"], "Source")
 
-        self.assertEquals(data[1]["unique_name"], "solr")
-        self.assertEquals(data[1]["display_name"], "Solr")
+        self.assertEquals(data[0]["unique_name"], "youku")
+        self.assertEquals(data[0]["display_name"], "Youku")
 
-        self.assertEquals(data[2]["unique_name"], "other")
-        self.assertEquals(data[2]["display_name"], "Other")
+        self.assertEquals(data[1]["unique_name"], "tudou")
+        self.assertEquals(data[1]["display_name"], "Tudou")
+
+        self.assertEquals(data[2]["unique_name"], "aiqiyi")
+        self.assertEquals(data[2]["display_name"], "Aiqiyi")
 
         post_group = {'unique_name': 'postGroup',
                       "display_name": 'postGroup'}

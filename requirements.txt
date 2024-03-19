@@ -1,7 +1,8 @@
 nose
-django==1.8.2
+django==3.2.25
 django-ipware
 pymysql
 djangorestframework
 markdown
 django-filter
+jsonpickle
